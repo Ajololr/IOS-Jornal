@@ -13,6 +13,8 @@
 		093B25DE25C9AC9B00F26CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DC25C9AC9B00F26CE2 /* Main.storyboard */; };
 		093B25E025C9AC9B00F26CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */; };
 		093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */; };
+		09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */; };
+		09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093B25E225C9AC9B00F26CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093B25E425C9AC9B00F26CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavViewController.swift; sourceTree = "<group>"; };
+		09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */,
 				093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */,
 				093B25E425C9AC9B00F26CE2 /* Info.plist */,
+				09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */,
+				09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */,
 			);
 			path = lab;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */,
 				093B25DB25C9AC9B00F26CE2 /* ViewController.swift in Sources */,
+				09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */,
 				093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */,
 				093B25D925C9AC9B00F26CE2 /* SceneDelegate.swift in Sources */,
 			);
