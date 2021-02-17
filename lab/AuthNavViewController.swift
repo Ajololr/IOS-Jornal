@@ -10,6 +10,8 @@ import UIKit
 class AuthNavViewController: UIViewController {
 
     @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

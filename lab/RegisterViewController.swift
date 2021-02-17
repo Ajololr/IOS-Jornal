@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -16,22 +17,24 @@ class RegisterViewController: UIViewController {
     }
     
     @IBOutlet weak var imageButton: UIButton!
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
     
     @IBAction func imageTap(_ sender: Any) {
         showImagePickerControllerActionSheet()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func createTap(_ sender: Any) {
+        
+        
+        Auth.auth().createUser(withEmail: emailInput.text ?? "", password: passwordInput.text ?? "") {(result, error) in
+            if let error = error {
+                  print(error.localizedDescription)
+                  return
+                }
+        }
     }
-    */
-
+    
 }
 
 extension RegisterViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -57,10 +60,10 @@ extension RegisterViewController: UIImagePickerControllerDelegate,UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             imageButton.setBackgroundImage(editedImage, for:  UIControl.State.normal)
-            imageButton.clipsToBounds = true
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            profileImage.image = originalImage
+            imageButton.setBackgroundImage(originalImage, for:  UIControl.State.normal)
         }
+        imageButton.clipsToBounds = true
         
         dismiss(animated: true)
     }
