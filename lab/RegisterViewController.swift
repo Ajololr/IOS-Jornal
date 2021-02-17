@@ -10,6 +10,9 @@ import FirebaseAuth
 import Firebase
 
 let db = Firestore.firestore()
+let storage = Storage.storage()
+let storageRef = storage.reference()
+let imagesRef = storageRef.child("images")
 
 class RegisterViewController: UIViewController {
 
@@ -35,7 +38,7 @@ class RegisterViewController: UIViewController {
     @IBAction func createTap(_ sender: Any) {
         label.text = ""
         
-        if passwordInput.text!.isEmpty || emailInput.text!.isEmpty || firstNameInput.text!.isEmpty || secondNameInput.text!.isEmpty || lastNameInput.text!.isEmpty {
+        if imageButton.backgroundImage(for: .normal) == nil || passwordInput.text!.isEmpty || emailInput.text!.isEmpty || firstNameInput.text!.isEmpty || secondNameInput.text!.isEmpty || lastNameInput.text!.isEmpty {
             setError("Please, fill all the fields")
             return;
         }
@@ -45,24 +48,46 @@ class RegisterViewController: UIViewController {
                 setError(error.localizedDescription)
                   return
             } else {
-               db.collection("group mates").addDocument(data: [
-                    "firstName": firstNameInput.text!,
-                    "secondName": secondNameInput.text!,
-                    "lastName": lastNameInput.text!,
-                    "birthday": birthdayInput.date,
-                    "email": emailInput.text!
-                ]) { err in
-                    if let err = err {
-                        setError("Error adding document: \(err)")
-                    } else {
-                        passwordInput.text = ""
-                        emailInput.text = ""
-                        firstNameInput.text = ""
-                        secondNameInput.text = ""
-                        lastNameInput.text = ""
-                        setSuccess("Group mate added!")
-                    }
+                if (imageButton.backgroundImage(for: .normal) != nil) {
+                    let imageName = UUID().uuidString + ".jpeg";
+                    let imageRef = imagesRef.child(imageName);
+                    let imageData :Data = imageButton.backgroundImage(for: .normal)!.jpegData(compressionQuality: 1)!
+                    imageRef.putData(imageData, metadata: nil) { (metadata, err) in
+                        if let err = err {
+                            setError("Error saving image: \(err)")
+                          return
+                        }
+                        imageRef.downloadURL { (url, error) in
+                          guard let downloadURL = url else {
+                            setError("Error saving image: \(String(describing: error))")
+                            return
+                          }
+                            
+                           db.collection("group mates").addDocument(data: [
+                                "firstName": firstNameInput.text!,
+                                "secondName": secondNameInput.text!,
+                                "lastName": lastNameInput.text!,
+                                "birthday": birthdayInput.date,
+                                "email": emailInput.text!,
+                                "images": [downloadURL.absoluteString]
+                            ]) { err in
+                                if let err = err {
+                                    setError("Error adding document: \(err)")
+                                } else {
+                                    passwordInput.text = ""
+                                    emailInput.text = ""
+                                    firstNameInput.text = ""
+                                    secondNameInput.text = ""
+                                    lastNameInput.text = ""
+                                    ima
+                                    setSuccess("Group mate added!")
+                                }
+                            }
+                            
+                        }
+                      }
                 }
+                
             }
         }
     }
