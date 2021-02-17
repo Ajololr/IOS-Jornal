@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+
+let db = Firestore.firestore()
 
 class RegisterViewController: UIViewController {
 
@@ -18,21 +21,60 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var firstNameInput: UITextField!
+    @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var secondNameInput: UITextField!
+    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var birthdayInput: UIDatePicker!
     
     @IBAction func imageTap(_ sender: Any) {
         showImagePickerControllerActionSheet()
     }
     @IBAction func createTap(_ sender: Any) {
+        label.text = ""
         
-        
-        Auth.auth().createUser(withEmail: emailInput.text ?? "", password: passwordInput.text ?? "") {(result, error) in
-            if let error = error {
-                  print(error.localizedDescription)
-                  return
-                }
+        if passwordInput.text!.isEmpty || emailInput.text!.isEmpty || firstNameInput.text!.isEmpty || secondNameInput.text!.isEmpty || lastNameInput.text!.isEmpty {
+            setError("Please, fill all the fields")
+            return;
         }
+        
+        Auth.auth().createUser(withEmail: emailInput.text ?? "", password: passwordInput.text ?? "") { [self](result, error) in
+            if let error = error {
+                setError(error.localizedDescription)
+                  return
+            } else {
+               db.collection("group mates").addDocument(data: [
+                    "firstName": firstNameInput.text!,
+                    "secondName": secondNameInput.text!,
+                    "lastName": lastNameInput.text!,
+                    "birthday": birthdayInput.date,
+                    "email": emailInput.text!
+                ]) { err in
+                    if let err = err {
+                        setError("Error adding document: \(err)")
+                    } else {
+                        passwordInput.text = ""
+                        emailInput.text = ""
+                        firstNameInput.text = ""
+                        secondNameInput.text = ""
+                        lastNameInput.text = ""
+                        setSuccess("Group mate added!")
+                    }
+                }
+            }
+        }
+    }
+    
+    func setError(_ errorMessage: String) {
+        label.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        label.text = errorMessage;
+    }
+    
+    func setSuccess(_ successMessage: String) {
+        label.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        label.text = successMessage
     }
     
 }
