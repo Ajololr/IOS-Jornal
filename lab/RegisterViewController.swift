@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController {
                                     firstNameInput.text = ""
                                     secondNameInput.text = ""
                                     lastNameInput.text = ""
-                                    ima
+                                    imageButton.setBackgroundImage(nil, for: .normal)
                                     setSuccess("Group mate added!")
                                 }
                             }
