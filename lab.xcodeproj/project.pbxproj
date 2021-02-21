@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */; };
 		090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1425DA82BB00F2C1E4 /* AlertService.swift */; };
+		092A53E225E2DAEC00ECB136 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */; };
+		092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */; };
 		093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */; };
 		093B25D925C9AC9B00F26CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */; };
 		093B25DB25C9AC9B00F26CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25DA25C9AC9B00F26CE2 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		090F5C1425DA82BB00F2C1E4 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		093B25D325C9AC9B00F26CE2 /* lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,10 +81,12 @@
 				093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */,
 				093B25DA25C9AC9B00F26CE2 /* ViewController.swift */,
 				093B25DC25C9AC9B00F26CE2 /* Main.storyboard */,
+				092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */,
 				093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */,
 				093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */,
 				093B25E425C9AC9B00F26CE2 /* Info.plist */,
 				09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */,
+				092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */,
 				09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */,
 				090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */,
 				090F5C1425DA82BB00F2C1E4 /* AlertService.swift */,
@@ -95,7 +101,6 @@
 				4FEE301936FC0E5CE4E7D215 /* Pods-lab.debug.xcconfig */,
 				32512D2326F451C773374872 /* Pods-lab.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,6 +234,8 @@
 				090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */,
 				093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */,
 				093B25D925C9AC9B00F26CE2 /* SceneDelegate.swift in Sources */,
+				092A53E225E2DAEC00ECB136 /* StudentTableViewCell.swift in Sources */,
+				092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

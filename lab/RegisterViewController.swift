@@ -13,6 +13,7 @@ let db = Firestore.firestore()
 let storage = Storage.storage()
 let storageRef = storage.reference()
 let imagesRef = storageRef.child("images")
+let groupMates = db.collection("group mates");
 
 class RegisterViewController: UIViewController {
 
