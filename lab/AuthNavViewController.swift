@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AuthNavViewController: UIViewController {
 
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +22,22 @@ class AuthNavViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        // ...
-        // after login is done, maybe put this in the login web service completion block
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTapBarNavController")
+        errorLabel.text = ""
         
-        // This is to get the SceneDelegate object from your view controller
-        // then call the change root view controller function to change to main tab bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        if emailInput.text == "" || passwordInput.text == "" {
+            errorLabel.text = "Please, fill all the fields"
+        }
+        
+        Auth.auth().signIn(withEmail: emailInput.text!, password: passwordInput.text!) { [self]result, err in
+            if let err = err {
+                errorLabel.text = err.localizedDescription
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTapBarNavController")
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            }
+        }
+
     }
 
 }
