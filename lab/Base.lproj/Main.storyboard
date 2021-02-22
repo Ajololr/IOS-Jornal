@@ -187,8 +187,37 @@
                     <view key="view" contentMode="scaleToFill" id="Is4-bn-eGC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-3v-iEG">
+                                <rect key="frame" x="30" y="118" width="354" height="122"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PAy-OU-LLg">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-k4-I57">
+                                        <rect key="frame" x="-2" y="31" width="358" height="31"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="adi-Ie-3n8">
+                                        <rect key="frame" x="-2" y="61" width="358" height="31"/>
+                                    </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-un-FCl">
+                                        <rect key="frame" x="0.0" y="91" width="356" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="l9w-Do-TFw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hqH-3v-iEG" firstAttribute="leading" secondItem="l9w-Do-TFw" secondAttribute="leading" constant="30" id="IFi-Eb-RGm"/>
+                            <constraint firstItem="hqH-3v-iEG" firstAttribute="centerX" secondItem="Is4-bn-eGC" secondAttribute="centerX" id="Nry-KA-p58"/>
+                            <constraint firstItem="hqH-3v-iEG" firstAttribute="top" secondItem="l9w-Do-TFw" secondAttribute="top" constant="30" id="Zpb-2g-AKi"/>
+                            <constraint firstItem="l9w-Do-TFw" firstAttribute="trailing" secondItem="hqH-3v-iEG" secondAttribute="trailing" constant="30" id="e3y-Or-P58"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="gKY-sl-cke">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="gEn-B4-j6P">
@@ -201,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hn-wi-BEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-259" y="1509"/>
+            <point key="canvasLocation" x="-259.4202898550725" y="1508.7053571428571"/>
         </scene>
         <!--Login-->
         <scene sceneID="dFT-Dy-Day">
