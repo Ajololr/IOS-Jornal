@@ -121,6 +121,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate,UINavigationCo
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
+        imagePickerController.mediaTypes = ["public.image"]
         imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true)
     }

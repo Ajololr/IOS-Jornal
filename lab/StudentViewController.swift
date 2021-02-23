@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import AVKit
 
 class StudentViewController: UIViewController {
     var student: Student?
+    var videoURL: NSURL?
 
     @IBOutlet weak var firstNameInput: UITextField!
     @IBOutlet weak var secondNameInput: UITextField!
@@ -30,7 +32,20 @@ class StudentViewController: UIViewController {
         
     }
     
+    @IBAction func uploadVideoTap(_ sender: Any) {
+        showVideoPickerControllerActionSheet()
+    }
+    
+    @IBAction func watchVideoTap(_ sender: Any) {
+        let player = AVPlayer(url: videoURL! as URL)
 
+          let playerViewController = AVPlayerViewController()
+          playerViewController.player = player
+
+        present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+          }
+    }
     /*
     // MARK: - Navigation
 
@@ -41,4 +56,34 @@ class StudentViewController: UIViewController {
     }
     */
 
+}
+
+extension StudentViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func showVideoPickerControllerActionSheet() {
+        let photoLibAction = UIAlertAction( title: "Choose from library", style: .default ) {
+            (action) in self.showImagePickerController(sourceType: .photoLibrary)
+        }
+        let cameraAction = UIAlertAction( title: "Take from camera", style: .default ) {
+            (action) in self.showImagePickerController(sourceType: .camera)
+        }
+        let cancelAction = UIAlertAction( title: "Cancel", style: .cancel, handler: nil )
+        AlertService.showAlert(style: .actionSheet, title: "Choose your video", message: nil, actions: [photoLibAction, cameraAction, cancelAction], completion: nil)
+    }
+    
+    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.movie"]
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
+        print(videoURL!)
+        
+        dismiss(animated: true)
+    }
 }
