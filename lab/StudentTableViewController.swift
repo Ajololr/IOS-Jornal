@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import os.log
 
 class Student {
     var firstName : String
@@ -101,6 +101,8 @@ class StudentTableViewController: UITableViewController {
             print(url)
             cell.imageView?.load(url: url)
 //            self.tableView.reloadData()
+        } else {
+            cell.imageView?.image = UIImage(named: "user")
         }
         
         return cell
@@ -141,14 +143,26 @@ class StudentTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        guard let studentDetailViewController = segue.destination as? StudentViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+         
+        guard let selectedStudentCell = sender as? StudentTableViewCell else {
+            fatalError("Unexpected sender: \(sender)")
+        }
+         
+        guard let indexPath = tableView.indexPath(for: selectedStudentCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+         
+        let selectedStudent = students[indexPath.row]
+        studentDetailViewController.student = selectedStudent
     }
-    */
 
 }

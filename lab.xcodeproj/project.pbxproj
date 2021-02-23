@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */; };
 		090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1425DA82BB00F2C1E4 /* AlertService.swift */; };
+		092491F325E56E0F00E7A2E6 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092491F225E56E0F00E7A2E6 /* StudentViewController.swift */; };
 		092A53E225E2DAEC00ECB136 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */; };
 		092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */; };
 		093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		090F5C1425DA82BB00F2C1E4 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		092491F225E56E0F00E7A2E6 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		093B25D325C9AC9B00F26CE2 /* lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */,
 				090F5C1425DA82BB00F2C1E4 /* AlertService.swift */,
 				093E54E325DC32F700371B13 /* GoogleService-Info.plist */,
+				092491F225E56E0F00E7A2E6 /* StudentViewController.swift */,
 			);
 			path = lab;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092491F325E56E0F00E7A2E6 /* StudentViewController.swift in Sources */,
 				09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */,
 				093B25DB25C9AC9B00F26CE2 /* ViewController.swift in Sources */,
 				090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */,
