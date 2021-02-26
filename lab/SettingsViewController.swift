@@ -9,6 +9,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var themeMode: UISegmentedControl!
+    @IBOutlet weak var fontSizeSelector: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

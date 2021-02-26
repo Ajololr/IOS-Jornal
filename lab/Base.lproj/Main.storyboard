@@ -356,6 +356,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="fontSizeSelector" destination="XnA-k4-I57" id="MXY-XH-62p"/>
+                        <outlet property="themeMode" destination="PAy-OU-LLg" id="4Wg-hC-u4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hn-wi-BEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
