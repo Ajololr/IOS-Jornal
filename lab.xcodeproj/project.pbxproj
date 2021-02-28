@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */; };
 		090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F5C1425DA82BB00F2C1E4 /* AlertService.swift */; };
+		09157DD725EBBE120060F7B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09157DD625EBBE120060F7B5 /* GoogleService-Info.plist */; };
 		092491F325E56E0F00E7A2E6 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092491F225E56E0F00E7A2E6 /* StudentViewController.swift */; };
 		092A53E225E2DAEC00ECB136 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */; };
 		092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */; };
@@ -18,7 +19,6 @@
 		093B25DE25C9AC9B00F26CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DC25C9AC9B00F26CE2 /* Main.storyboard */; };
 		093B25E025C9AC9B00F26CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */; };
 		093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */; };
-		093E54E425DC32F700371B13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 093E54E325DC32F700371B13 /* GoogleService-Info.plist */; };
 		09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */; };
 		09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */; };
 		E6445714E77DDFA9232B3274 /* Pods_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110536B6AC5091EB31AC9638 /* Pods_lab.framework */; };
@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		090F5C1425DA82BB00F2C1E4 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		09157DD625EBBE120060F7B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		092491F225E56E0F00E7A2E6 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		092A53E125E2DAEC00ECB136 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093B25E225C9AC9B00F26CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093B25E425C9AC9B00F26CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		093E54E325DC32F700371B13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavViewController.swift; sourceTree = "<group>"; };
 		09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		110536B6AC5091EB31AC9638 /* Pods_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +79,7 @@
 		093B25D525C9AC9B00F26CE2 /* lab */ = {
 			isa = PBXGroup;
 			children = (
+				09157DD625EBBE120060F7B5 /* GoogleService-Info.plist */,
 				093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */,
 				093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */,
 				093B25DA25C9AC9B00F26CE2 /* ViewController.swift */,
@@ -92,7 +93,6 @@
 				09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */,
 				090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */,
 				090F5C1425DA82BB00F2C1E4 /* AlertService.swift */,
-				093E54E325DC32F700371B13 /* GoogleService-Info.plist */,
 				092491F225E56E0F00E7A2E6 /* StudentViewController.swift */,
 			);
 			path = lab;
@@ -175,7 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */,
-				093E54E425DC32F700371B13 /* GoogleService-Info.plist in Resources */,
+				09157DD725EBBE120060F7B5 /* GoogleService-Info.plist in Resources */,
 				093B25E025C9AC9B00F26CE2 /* Assets.xcassets in Resources */,
 				093B25DE25C9AC9B00F26CE2 /* Main.storyboard in Resources */,
 			);
