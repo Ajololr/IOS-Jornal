@@ -20,8 +20,9 @@ class Student {
     var videoUrl : String
     var longitude: String
     var latitude: String
+    var images: [String]
     
-    init(id: String, firstName:String, lastName:String, secondName:String, imageUrl:String, birthday:Date, videoUrl: String, longitude: String, latitude: String) {
+    init(id: String, firstName:String, lastName:String, secondName:String, imageUrl:String, birthday:Date, videoUrl: String, longitude: String, latitude: String, images: [String]) {
         self.id = id
         self.birthday = birthday
         self.firstName = firstName
@@ -31,6 +32,7 @@ class Student {
         self.videoUrl = videoUrl
         self.latitude = latitude
         self.longitude = longitude
+        self.images = images
     }
 }
 
@@ -71,7 +73,7 @@ class StudentTableViewController: UITableViewController {
                     let postTimestamp = document.get("birthday") as! Timestamp;
                     let birthday = postTimestamp.dateValue();
                     
-                    let student = Student(id: document.documentID, firstName: document.get("firstName") as! String, lastName: document.get("lastName") as! String, secondName: document.get("secondName") as! String, imageUrl: b.isEmpty ? "" : b[0], birthday: birthday, videoUrl: document.get("videoUrl") as! String, longitude: document.get("longitude") as! String, latitude: document.get("latitude") as! String)
+                    let student = Student(id: document.documentID, firstName: document.get("firstName") as! String, lastName: document.get("lastName") as! String, secondName: document.get("secondName") as! String, imageUrl: b.isEmpty ? "" : b[0], birthday: birthday, videoUrl: document.get("videoUrl") as! String, longitude: document.get("longitude") as! String, latitude: document.get("latitude") as! String, images: document.get("images") as! [String])
                     StudentTableViewController.students += [student]
                 }
                 self.tableView.reloadData()
@@ -108,7 +110,7 @@ class StudentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell", for: indexPath) as? StudentTableViewCell else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of StudentTableViewController.")
         }
 
         let student = StudentTableViewController.students[indexPath.row]

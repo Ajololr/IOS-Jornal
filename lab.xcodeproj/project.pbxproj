@@ -19,6 +19,9 @@
 		093B25DE25C9AC9B00F26CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DC25C9AC9B00F26CE2 /* Main.storyboard */; };
 		093B25E025C9AC9B00F26CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */; };
 		093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */; };
+		0992ECE525EC04590089A875 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECE425EC04590089A875 /* GalleryCollectionViewController.swift */; };
+		0992ECE825EC06130089A875 /* GalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECE725EC06130089A875 /* GalleryImageCollectionViewCell.swift */; };
+		0992ECEB25EC2E2E0089A875 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */; };
 		09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */; };
 		09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */; };
 		E6445714E77DDFA9232B3274 /* Pods_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110536B6AC5091EB31AC9638 /* Pods_lab.framework */; };
@@ -39,6 +42,9 @@
 		093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093B25E225C9AC9B00F26CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093B25E425C9AC9B00F26CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0992ECE425EC04590089A875 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		0992ECE725EC06130089A875 /* GalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		09C1A09425D9AB61008CFB59 /* AuthNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavViewController.swift; sourceTree = "<group>"; };
 		09C1A09725D9B5C1008CFB59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		110536B6AC5091EB31AC9638 /* Pods_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +100,9 @@
 				090F5C1125DA72E500F2C1E4 /* RegisterViewController.swift */,
 				090F5C1425DA82BB00F2C1E4 /* AlertService.swift */,
 				092491F225E56E0F00E7A2E6 /* StudentViewController.swift */,
+				0992ECE425EC04590089A875 /* GalleryCollectionViewController.swift */,
+				0992ECE725EC06130089A875 /* GalleryImageCollectionViewCell.swift */,
+				0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */,
 			);
 			path = lab;
 			sourceTree = "<group>";
@@ -248,10 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0992ECEB25EC2E2E0089A875 /* ImageDetailsViewController.swift in Sources */,
+				0992ECE525EC04590089A875 /* GalleryCollectionViewController.swift in Sources */,
 				092491F325E56E0F00E7A2E6 /* StudentViewController.swift in Sources */,
 				09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */,
 				093B25DB25C9AC9B00F26CE2 /* MapViewController.swift in Sources */,
 				090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */,
+				0992ECE825EC06130089A875 /* GalleryImageCollectionViewCell.swift in Sources */,
 				09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */,
 				090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */,
 				093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */,

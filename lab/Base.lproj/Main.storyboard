@@ -65,6 +65,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jD3-Cn-fUh">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <color key="tintColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="90" id="sis-ly-f4F"/>
                                                 <constraint firstAttribute="height" constant="90" id="xl1-a8-Z7K"/>
@@ -210,6 +211,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltx-Sz-Gg3">
                                         <rect key="frame" x="0.0" y="420" width="374" height="50"/>
                                         <state key="normal" title="Gallery"/>
+                                        <connections>
+                                            <segue destination="ZGf-SY-D23" kind="show" id="SLZ-hb-3uK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -243,28 +247,43 @@
             </objects>
             <point key="canvasLocation" x="-2004.3478260869567" y="2215.8482142857142"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Gallery-->
         <scene sceneID="JCc-Eg-eJ9">
             <objects>
-                <collectionViewController id="ZGf-SY-D23" sceneMemberID="viewController">
+                <collectionViewController id="ZGf-SY-D23" customClass="GalleryCollectionViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="coc-et-kjd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ka0-xT-d04">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="2" id="t4d-Fl-cfA">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b7m-g4-8Fl">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="b7m-g4-8Fl" customClass="GalleryImageCollectionViewCell" customModule="lab" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yLs-g4-qgf">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9ii-KU-yBD">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Awn-Gg-aoP">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Awn-Gg-aoP" firstAttribute="leading" secondItem="9ii-KU-yBD" secondAttribute="leading" id="BJU-2Y-tZT"/>
+                                        <constraint firstAttribute="trailing" secondItem="Awn-Gg-aoP" secondAttribute="trailing" id="K41-jm-d1y"/>
+                                        <constraint firstItem="Awn-Gg-aoP" firstAttribute="top" secondItem="9ii-KU-yBD" secondAttribute="top" id="TgA-Z3-KIU"/>
+                                        <constraint firstAttribute="bottom" secondItem="Awn-Gg-aoP" secondAttribute="bottom" id="dJE-b4-vhY"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="Awn-Gg-aoP" id="Px0-r6-b0f"/>
+                                    <segue destination="Qhj-JV-Ucx" kind="show" id="opD-Uv-HM1"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -272,10 +291,47 @@
                             <outlet property="delegate" destination="ZGf-SY-D23" id="tmX-4A-s32"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Gallery" id="RDn-u8-gAi">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="XVC-Pe-04N">
+                            <connections>
+                                <action selector="addImageTap:" destination="ZGf-SY-D23" id="527-NE-0SQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2c-ub-XzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2004" y="2910"/>
+        </scene>
+        <!--Image Details View Controller-->
+        <scene sceneID="7XK-hc-JrF">
+            <objects>
+                <viewController id="Qhj-JV-Ucx" customClass="ImageDetailsViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="303-KM-Keo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rw7-MY-TPp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T3V-gc-R1H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rw7-MY-TPp" firstAttribute="bottom" secondItem="T3V-gc-R1H" secondAttribute="bottom" id="73x-RV-w6U"/>
+                            <constraint firstItem="Rw7-MY-TPp" firstAttribute="leading" secondItem="T3V-gc-R1H" secondAttribute="leading" id="WsW-7q-pjM"/>
+                            <constraint firstItem="Rw7-MY-TPp" firstAttribute="top" secondItem="T3V-gc-R1H" secondAttribute="top" id="aaQ-yA-U2c"/>
+                            <constraint firstItem="Rw7-MY-TPp" firstAttribute="trailing" secondItem="T3V-gc-R1H" secondAttribute="trailing" id="rrp-fI-6sA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UBX-m7-feq"/>
+                    <connections>
+                        <outlet property="imageView" destination="Rw7-MY-TPp" id="qyg-yb-LlL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APf-lN-C16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2004.3478260869567" y="3616.7410714285711"/>
         </scene>
         <!--SettingsItem-->
         <scene sceneID="mh8-f3-jwh">
@@ -643,6 +699,7 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
