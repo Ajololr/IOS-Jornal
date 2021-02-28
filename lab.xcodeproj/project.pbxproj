@@ -15,7 +15,7 @@
 		092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */; };
 		093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */; };
 		093B25D925C9AC9B00F26CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */; };
-		093B25DB25C9AC9B00F26CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25DA25C9AC9B00F26CE2 /* ViewController.swift */; };
+		093B25DB25C9AC9B00F26CE2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B25DA25C9AC9B00F26CE2 /* MapViewController.swift */; };
 		093B25DE25C9AC9B00F26CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DC25C9AC9B00F26CE2 /* Main.storyboard */; };
 		093B25E025C9AC9B00F26CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */; };
 		093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */; };
@@ -34,7 +34,7 @@
 		093B25D325C9AC9B00F26CE2 /* lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		093B25DA25C9AC9B00F26CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		093B25DA25C9AC9B00F26CE2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		093B25DD25C9AC9B00F26CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093B25E225C9AC9B00F26CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				09157DD625EBBE120060F7B5 /* GoogleService-Info.plist */,
 				093B25D625C9AC9B00F26CE2 /* AppDelegate.swift */,
 				093B25D825C9AC9B00F26CE2 /* SceneDelegate.swift */,
-				093B25DA25C9AC9B00F26CE2 /* ViewController.swift */,
+				093B25DA25C9AC9B00F26CE2 /* MapViewController.swift */,
 				093B25DC25C9AC9B00F26CE2 /* Main.storyboard */,
 				092A53E425E2DE8700ECB136 /* StudentTableViewController.swift */,
 				093B25DF25C9AC9B00F26CE2 /* Assets.xcassets */,
@@ -127,6 +127,7 @@
 				093B25D025C9AC9A00F26CE2 /* Frameworks */,
 				093B25D125C9AC9A00F26CE2 /* Resources */,
 				705D14431C373791E51E88E0 /* [CP] Embed Pods Frameworks */,
+				2A9F9CEBFCFDCECAC133F4A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +185,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A9F9CEBFCFDCECAC133F4A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lab/Pods-lab-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lab/Pods-lab-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lab/Pods-lab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		705D14431C373791E51E88E0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +250,7 @@
 			files = (
 				092491F325E56E0F00E7A2E6 /* StudentViewController.swift in Sources */,
 				09C1A09525D9AB61008CFB59 /* AuthNavViewController.swift in Sources */,
-				093B25DB25C9AC9B00F26CE2 /* ViewController.swift in Sources */,
+				093B25DB25C9AC9B00F26CE2 /* MapViewController.swift in Sources */,
 				090F5C1525DA82BB00F2C1E4 /* AlertService.swift in Sources */,
 				09C1A09825D9B5C1008CFB59 /* SettingsViewController.swift in Sources */,
 				090F5C1225DA72E500F2C1E4 /* RegisterViewController.swift in Sources */,

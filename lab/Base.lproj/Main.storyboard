@@ -130,7 +130,7 @@
         <!--Details-->
         <scene sceneID="hC4-5J-tdx">
             <objects>
-                <viewController id="ynA-P9-Y4z" customClass="StudentViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="ynA-P9-Y4z" customClass="StudentViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IYp-Xg-ry0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,16 +297,10 @@
         <!--Map-->
         <scene sceneID="pXy-ij-col">
             <objects>
-                <viewController id="pWV-U5-cbe" customClass="ViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pWV-U5-cbe" customClass="MapViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTE-MU-QFb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-Uh-3FE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NmA-6p-MP7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -314,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5s-4Q-gYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1142.0289855072465" y="1508.7053571428571"/>
+            <point key="canvasLocation" x="-1142" y="1509"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Tog-i0-aEd">

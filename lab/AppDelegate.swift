@@ -7,12 +7,16 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
+import GooglePlaces
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        GMSServices.provideAPIKey("AIzaSyAUqhSTswjILv7kYJCLQM_5xDdmvaTyAP4")
+        GMSPlacesClient.provideAPIKey("AIzaSyAUqhSTswjILv7kYJCLQM_5xDdmvaTyAP4")
         return true
     }
 

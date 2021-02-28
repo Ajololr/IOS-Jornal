@@ -11,4 +11,6 @@ target 'lab' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
+  pod 'GoogleMaps', '4.1.0'
+  pod 'GooglePlaces', '4.1.0'
 end

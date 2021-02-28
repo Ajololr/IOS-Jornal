@@ -51,12 +51,12 @@ extension UIImageView {
 class StudentTableViewController: UITableViewController {
     //MARK: Properties
     
-    var students = [Student]()
+    static var students = [Student]()
     
     //MARK: Private Methods
     
     public func loadStudents() {
-        students = [Student]()
+        StudentTableViewController.students = [Student]()
         groupMates.getDocuments() { [self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -72,7 +72,7 @@ class StudentTableViewController: UITableViewController {
                     let birthday = postTimestamp.dateValue();
                     
                     let student = Student(id: document.documentID, firstName: document.get("firstName") as! String, lastName: document.get("lastName") as! String, secondName: document.get("secondName") as! String, imageUrl: b.isEmpty ? "" : b[0], birthday: birthday, videoUrl: document.get("videoUrl") as! String, longitude: document.get("longitude") as! String, latitude: document.get("latitude") as! String)
-                    self.students += [student]
+                    StudentTableViewController.students += [student]
                 }
                 self.tableView.reloadData()
             }
@@ -103,7 +103,7 @@ class StudentTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return StudentTableViewController.students.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +111,7 @@ class StudentTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
 
-        let student = students[indexPath.row]
+        let student = StudentTableViewController.students[indexPath.row]
         
         cell.nameLabel.text = student.firstName + " " + student.lastName + " " + student.secondName
         if let url = URL(string: student.imageUrl) {
@@ -178,7 +178,7 @@ class StudentTableViewController: UITableViewController {
             fatalError("The selected cell is not being displayed by the table")
         }
          
-        let selectedStudent = students[indexPath.row]
+        let selectedStudent = StudentTableViewController.students[indexPath.row]
         studentDetailViewController.student = selectedStudent
     }
 
