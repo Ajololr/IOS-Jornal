@@ -16,6 +16,9 @@ class StudentViewController: UIViewController {
     @IBOutlet weak var secondNameInput: UITextField!
     @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var birthdayInput: UIDatePicker!
+    @IBOutlet weak var watchButton: UIButton!
+    @IBOutlet weak var latitudeInput: UITextField!
+    @IBOutlet weak var longitudeInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +31,27 @@ class StudentViewController: UIViewController {
             secondNameInput.text = student.secondName
             lastNameInput.text = student.lastName
             birthdayInput.date = student.birthday
+            latitudeInput.text = student.latitude
+            longitudeInput.text = student.longitude
+            videoURL = NSURL(string: student.videoUrl)
         }
         
+        if (student?.videoUrl == "") {
+            watchButton.isEnabled = false;
+        }
+    }
+    
+    @IBAction func saveTap(_ sender: Any) {
+        groupMates.document(student!.id).setData([ "firstName": firstNameInput.text!, "secondName": secondNameInput.text!, "lastName": lastNameInput.text!, "latitude": latitudeInput.text!, "longitude": longitudeInput.text!, "birthday": birthdayInput.date], merge: true) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     @IBAction func uploadVideoTap(_ sender: Any) {
@@ -82,7 +104,44 @@ extension StudentViewController: UIImagePickerControllerDelegate,UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
-        print(videoURL!)
+        if (videoURL != nil) {
+            watchButton.isEnabled = true
+            
+            print(videoURL!)
+            
+            let videoName = UUID().uuidString + ".mov";
+            let videoRef = videosRef.child(videoName);
+            
+            var movieData : NSData? = nil
+            do {
+                movieData = try NSData(contentsOf: videoURL! as URL, options: .mappedIfSafe)
+            } catch {
+                print(error)
+                return
+            }
+            
+            if (movieData != nil) {
+                videoRef.putData(movieData! as Data, metadata: nil) { (metadata, err) in
+                    if let err = err {
+                        print("Error saving video: \(err)")
+                      return
+                    }
+                    videoRef.downloadURL { (url, error) in
+                        guard let downloadURL = url else {
+                            print("Error saving video: \(String(describing: error))")
+                            return
+                        }
+                        groupMates.document(self.student!.id).setData([ "videoUrl": downloadURL.absoluteString], merge: true) { err in
+                            if let err = err {
+                                print("Error writing document: \(err)")
+                            } else {
+                                print("Document successfully written!")
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         dismiss(animated: true)
     }

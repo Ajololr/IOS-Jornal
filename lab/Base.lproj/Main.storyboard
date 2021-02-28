@@ -50,8 +50,8 @@
         <!--Student Table View Controller-->
         <scene sceneID="hGx-yx-t6c">
             <objects>
-                <tableViewController id="8Bi-QF-y8N" customClass="StudentTableViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fTY-GX-UEQ">
+                <tableViewController storyboardIdentifier="students table" id="8Bi-QF-y8N" customClass="StudentTableViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="fTY-GX-UEQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,13 +223,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="v2m-eJ-fhL">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="iSq-OV-yem"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="iSq-OV-yem">
+                            <connections>
+                                <action selector="saveTap:" destination="ynA-P9-Y4z" id="3KK-GM-ZyT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayInput" destination="Wyn-uA-UEt" id="dZ8-W3-z2F"/>
                         <outlet property="firstNameInput" destination="ddU-g0-iwq" id="X4s-Ao-C6i"/>
                         <outlet property="lastNameInput" destination="ZGt-8q-i9t" id="3ge-X9-wrj"/>
+                        <outlet property="latitudeInput" destination="CMs-it-V3G" id="8Pf-PY-e5Y"/>
+                        <outlet property="longitudeInput" destination="MDu-cO-zLi" id="S3l-Tm-PsU"/>
                         <outlet property="secondNameInput" destination="LMv-wc-jE6" id="mmW-Rf-YhV"/>
+                        <outlet property="watchButton" destination="SaX-hm-x7X" id="Yse-Mr-5FB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgs-pA-iPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

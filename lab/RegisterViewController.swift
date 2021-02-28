@@ -8,11 +8,13 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 let db = Firestore.firestore()
 let storage = Storage.storage()
 let storageRef = storage.reference()
 let imagesRef = storageRef.child("images")
+let videosRef = storageRef.child("videos")
 let groupMates = db.collection("group mates");
 
 class RegisterViewController: UIViewController {
@@ -52,7 +54,7 @@ class RegisterViewController: UIViewController {
                 if (imageButton.backgroundImage(for: .normal) != nil) {
                     let imageName = UUID().uuidString + ".jpeg";
                     let imageRef = imagesRef.child(imageName);
-                    let imageData :Data = imageButton.backgroundImage(for: .normal)!.jpegData(compressionQuality: 1)!
+                    let imageData :Data = imageButton.backgroundImage(for: .normal)!.jpegData(compressionQuality: 0.5)!
                     imageRef.putData(imageData, metadata: nil) { (metadata, err) in
                         if let err = err {
                             setError("Error saving image: \(err)")
@@ -70,7 +72,10 @@ class RegisterViewController: UIViewController {
                                 "lastName": lastNameInput.text!,
                                 "birthday": birthdayInput.date,
                                 "email": emailInput.text!,
-                                "images": [downloadURL.absoluteString]
+                                "images": [downloadURL.absoluteString],
+                                "videoUrl" : "",
+                                "latitude": "",
+                                "longitude": ""
                             ]) { err in
                                 if let err = err {
                                     setError("Error adding document: \(err)")

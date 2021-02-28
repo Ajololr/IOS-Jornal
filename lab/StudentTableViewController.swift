@@ -7,21 +7,30 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import os.log
 
 class Student {
+    var id : String
     var firstName : String
     var lastName : String
     var secondName : String
     var imageUrl : String
     var birthday : Date
+    var videoUrl : String
+    var longitude: String
+    var latitude: String
     
-    init(firstName:String, lastName:String, secondName:String, imageUrl:String, birthday:Date) {
+    init(id: String, firstName:String, lastName:String, secondName:String, imageUrl:String, birthday:Date, videoUrl: String, longitude: String, latitude: String) {
+        self.id = id
         self.birthday = birthday
         self.firstName = firstName
         self.secondName = secondName
         self.lastName = lastName
         self.imageUrl = imageUrl
+        self.videoUrl = videoUrl
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 
@@ -46,7 +55,8 @@ class StudentTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadStudents() {
+    public func loadStudents() {
+        students = [Student]()
         groupMates.getDocuments() { [self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -58,7 +68,10 @@ class StudentTableViewController: UITableViewController {
                          b = a as! [String]
                     }
                     
-                    let student = Student(firstName: document.get("firstName") as! String, lastName: document.get("lastName") as! String, secondName: document.get("secondName") as! String, imageUrl: b.isEmpty ? "" : b[0], birthday: Date())
+                    let postTimestamp = document.get("birthday") as! Timestamp;
+                    let birthday = postTimestamp.dateValue();
+                    
+                    let student = Student(id: document.documentID, firstName: document.get("firstName") as! String, lastName: document.get("lastName") as! String, secondName: document.get("secondName") as! String, imageUrl: b.isEmpty ? "" : b[0], birthday: birthday, videoUrl: document.get("videoUrl") as! String, longitude: document.get("longitude") as! String, latitude: document.get("latitude") as! String)
                     self.students += [student]
                 }
                 self.tableView.reloadData()
@@ -67,16 +80,20 @@ class StudentTableViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadStudents()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0);
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        loadStudents()
     }
 
     // MARK: - Table view data source
