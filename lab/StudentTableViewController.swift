@@ -54,6 +54,14 @@ class StudentTableViewController: UITableViewController {
     //MARK: Properties
     
     static var students = [Student]()
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredStudents: [Student] = []
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
     
     //MARK: Private Methods
     
@@ -90,6 +98,13 @@ class StudentTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0);
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for students"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -105,6 +120,10 @@ class StudentTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredStudents.count
+          }
+        
         return StudentTableViewController.students.count
     }
 
@@ -113,9 +132,15 @@ class StudentTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of StudentTableViewController.")
         }
 
-        let student = StudentTableViewController.students[indexPath.row]
+        var student : Student
         
-        cell.nameLabel.text = student.firstName + " " + student.lastName + " " + student.secondName
+        if isFiltering {
+            student = filteredStudents[indexPath.row]
+          } else {
+            student = StudentTableViewController.students[indexPath.row]
+          }
+        
+        cell.nameLabel.text = student.firstName + " " + student.secondName + " " + student.lastName 
         if let url = URL(string: student.imageUrl) {
             print(url)
             cell.imageView?.load(url: url)
@@ -173,15 +198,36 @@ class StudentTableViewController: UITableViewController {
         }
          
         guard let selectedStudentCell = sender as? StudentTableViewCell else {
-            fatalError("Unexpected sender: \(sender)")
+            fatalError("Unexpected sender: \(String(describing: sender))")
         }
          
         guard let indexPath = tableView.indexPath(for: selectedStudentCell) else {
             fatalError("The selected cell is not being displayed by the table")
         }
-         
-        let selectedStudent = StudentTableViewController.students[indexPath.row]
+        
+        var selectedStudent : Student
+        if isFiltering {
+            selectedStudent = filteredStudents[indexPath.row]
+        } else {
+          selectedStudent = StudentTableViewController.students[indexPath.row]
+        }
+        
         studentDetailViewController.student = selectedStudent
     }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredStudents = StudentTableViewController.students.filter { (student: Student) -> Bool in
+            return (student.firstName + " " + student.secondName + " " + student.lastName).lowercased().contains(searchText.lowercased())
+      }
+      
+      tableView.reloadData()
+    }
 
+}
+
+extension StudentTableViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
+  }
 }
