@@ -1,0 +1,81 @@
+/* 
+  Localizable.strings
+  lab
+
+  Created by Ilya Androsav on 3/1/21.
+  
+*/
+
+"Welcome Back!" = "Добро пожаловать!";
+
+"First name" = "Имя";
+
+"Add new group mate" = "Добавить нового одногруппника";
+
+"Email" = "Электронное письмо";
+
+"Latitude" = "Широта";
+
+"Second name" = "Отчество";
+
+"Birthday" = "День рождения";
+
+"Email" = "Электронная почта";
+
+"Gallery" = "Галерея";
+
+"longitude" = "Долгота";
+
+"New group mate" = "Новый одногруппник";
+
+"Font Size: " = "Размер шрифта: ";
+
+"Gallery" = "Галерея";
+
+"Last Name" = "Фамилия";
+
+"Watch Video" = "Смотреть видео";
+
+"Change Primary Color" = "Изменить основной цвет";
+
+"Dark Mode" = "Темный режим";
+
+"I want to add new groupmate" = "Добавить нового одногруппника";
+
+"Group" = "Группа";
+
+"Password" = "Пароль";
+
+"Login" = "Авторизоваться";
+
+"Add" = "Добавить";
+
+"Map" = "Карта";
+
+"Last Name" = "Фамилия";
+
+"Complete" = "Завершить";
+
+"Login" = "Войти";
+
+"Map" = "Карта";
+
+"Birthday" = "День рождения";
+
+"First name" = "Имя";
+
+"Settings" = "Настройки";
+
+"Save" = "Сохранить";
+
+"Upload Video" = "Загрузить видео";
+
+"Details" = "Подробности";
+
+"Item" = "Элемент";
+
+"Password" = "Пароль";
+
+"Search for students" = "Искать студентов";
+
+"Cancel" = "Отмена";

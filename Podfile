@@ -13,4 +13,5 @@ target 'lab' do
   pod 'FirebaseFirestoreSwift'
   pod 'GoogleMaps', '4.1.0'
   pod 'GooglePlaces', '4.1.0'
+  pod 'LanguageManager-iOS'
 end

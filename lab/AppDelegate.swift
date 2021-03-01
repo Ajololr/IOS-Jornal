@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleMaps
 import GooglePlaces
+import LanguageManager_iOS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyAUqhSTswjILv7kYJCLQM_5xDdmvaTyAP4")
         GMSPlacesClient.provideAPIKey("AIzaSyAUqhSTswjILv7kYJCLQM_5xDdmvaTyAP4")
+        LanguageManager.shared.defaultLanguage = .en
+        LanguageManager.shared.setLanguage(language: .en)
         return true
     }
 

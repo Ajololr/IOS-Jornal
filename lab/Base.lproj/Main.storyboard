@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tap Bar View Controller-->
         <scene sceneID="c8w-ys-iE8">
             <objects>
-                <tabBarController storyboardIdentifier="MainTapBarNavController" id="tjQ-cB-YCM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTapBarNavController" id="tjQ-cB-YCM" customClass="TapBarViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="veB-u8-wXI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -369,13 +369,13 @@
         <!--Settings-->
         <scene sceneID="Tog-i0-aEd">
             <objects>
-                <viewController id="RvW-Ef-deU" customClass="SettingsViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settings" id="RvW-Ef-deU" customClass="SettingsViewController" customModule="lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Is4-bn-eGC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-3v-iEG">
-                                <rect key="frame" x="30" y="118" width="354" height="121"/>
+                                <rect key="frame" x="30" y="118" width="354" height="167"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kY1-64-3t1">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="31"/>
@@ -397,28 +397,48 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="SKp-Ge-QMe">
                                         <rect key="frame" x="0.0" y="46" width="354" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size: 18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2I-cj-HWC">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3V-9F-a7W">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="u2X-3I-2ZP"/>
+                                                    <constraint firstAttribute="width" constant="80" id="9Uj-tJ-6Wx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2I-cj-HWC">
+                                                <rect key="frame" x="80" y="0.0" width="35" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="qM9-bf-cVK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="8" maxValue="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-k4-I57">
-                                                <rect key="frame" x="118" y="0.0" width="238" height="31"/>
+                                                <rect key="frame" x="113" y="0.0" width="243" height="31"/>
                                                 <connections>
                                                     <action selector="fontValueChanged:" destination="RvW-Ef-deU" eventType="valueChanged" id="6ix-8F-dIu"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="XnA-k4-I57" firstAttribute="leading" secondItem="Q2I-cj-HWC" secondAttribute="trailing" constant="5" id="69r-7E-Ndp"/>
+                                            <constraint firstItem="XnA-k4-I57" firstAttribute="leading" secondItem="Q2I-cj-HWC" secondAttribute="trailing" constant="15" id="69r-7E-Ndp"/>
+                                            <constraint firstItem="Q2I-cj-HWC" firstAttribute="leading" secondItem="i3V-9F-a7W" secondAttribute="trailing" id="eCm-ma-rpC"/>
                                         </constraints>
                                     </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-CK-JUx">
+                                        <rect key="frame" x="0.0" y="91" width="354" height="32"/>
+                                        <segments>
+                                            <segment title="English"/>
+                                            <segment title="Russian"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="languageChange:" destination="RvW-Ef-deU" eventType="valueChanged" id="2BJ-tf-MXl"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjG-Qw-5u8">
-                                        <rect key="frame" x="0.0" y="91" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="137" width="354" height="30"/>
                                         <state key="normal" title="Change Primary Color"/>
                                         <connections>
                                             <action selector="changeColorTap:" destination="RvW-Ef-deU" eventType="touchUpInside" id="mrx-5h-rVA"/>
@@ -450,6 +470,8 @@
                         <outlet property="fontSizeLabel" destination="Q2I-cj-HWC" id="4MP-qt-qeg"/>
                         <outlet property="fontSizeSelector" destination="XnA-k4-I57" id="MXY-XH-62p"/>
                         <outlet property="fontSlider" destination="XnA-k4-I57" id="c8m-l9-cs5"/>
+                        <outlet property="fontTextLabel" destination="i3V-9F-a7W" id="Yad-Wa-ziy"/>
+                        <outlet property="languageSelect" destination="pS6-CK-JUx" id="AWo-56-fGl"/>
                         <outlet property="logoutButton" destination="gEn-B4-j6P" id="oih-Bn-JDq"/>
                         <outlet property="themeSwitch" destination="CeV-3o-3zN" id="e9c-XO-jo3"/>
                     </connections>
@@ -466,9 +488,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-QX-nqZ">
-                                <rect key="frame" x="110" y="752" width="194" height="30"/>
-                                <state key="normal" title="I want to add new classmate"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-QX-nqZ" userLabel="I want to add new groupmate">
+                                <rect key="frame" x="107" y="752" width="200" height="30"/>
+                                <state key="normal" title="I want to add new groupmate"/>
                                 <connections>
                                     <segue destination="aL7-a5-lG1" kind="show" id="6fK-F5-nYM"/>
                                 </connections>

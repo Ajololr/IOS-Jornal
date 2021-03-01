@@ -7,10 +7,11 @@
 
 import UIKit
 import GoogleMaps
+import LanguageManager_iOS
 
 class SettingsViewController: UIViewController {
 
-    static var appFontSize : CGFloat = CGFloat( SettingsViewController.appFontSize)
+    static var appFontSize : CGFloat = 18
     static var blackTheme = false
     var picker = UIColorPickerViewController()
     
@@ -21,21 +22,40 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var darkModeLabel: UILabel!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var fontSlider: UISlider!
+    @IBOutlet weak var languageSelect: UISegmentedControl!
+    @IBOutlet weak var fontTextLabel: UILabel!
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        if SettingsViewController.blackTheme{
-//            return .lightContent
-//        } else {
-//            return .darkContent
-//        }
-//    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if SettingsViewController.blackTheme{
+            return .lightContent
+        } else {
+            return .darkContent
+        }
+    }
+    
+    @IBAction func languageChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1 {
+            LanguageManager.shared.setLanguage(language: .ru)
+            { title -> UIViewController in
+              return  (self.storyboard?.instantiateViewController(identifier: "MainTapBarNavController"))!
+            }
+        } else {
+            LanguageManager.shared.setLanguage(language: .en)
+            { title -> UIViewController in
+                return (self.storyboard?.instantiateViewController(identifier: "MainTapBarNavController"))!
+            }
+        }
+    }
     
     func changeFont(){
+        UIButton.appearance().titleLabel?.font = UIButton.appearance().titleLabel?.font.withSize(CGFloat(SettingsViewController.appFontSize))
         UILabel.appearance().font = darkModeLabel.font.withSize(CGFloat(SettingsViewController.appFontSize))
-        fontSizeLabel.text = "Font size: \(Int(SettingsViewController.appFontSize))"
+        fontSizeLabel.text = "\(Int(SettingsViewController.appFontSize))"
+        fontTextLabel.font = fontTextLabel.font.withSize(CGFloat(SettingsViewController.appFontSize))
         fontSizeLabel.font = fontSizeLabel.font.withSize(CGFloat(SettingsViewController.appFontSize))
         darkModeLabel.font = darkModeLabel.font.withSize(CGFloat(SettingsViewController.appFontSize))
         changeColorButton.titleLabel?.font = changeColorButton.titleLabel?.font.withSize(CGFloat(SettingsViewController.appFontSize))
+        SettingsViewController.appFontSize = CGFloat(SettingsViewController.appFontSize)
     }
     
     @IBAction func changeColorTap(_ sender: Any) {
@@ -76,28 +96,16 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func changeOption() {
-        changeFont()
-        fontSizeSelector.value = Float(CGFloat(SettingsViewController.appFontSize))
-        changeFont()
-        
-        themeSwitch.isOn = SettingsViewController.blackTheme
-        themeSwitchChanged(themeSwitch)
-        
-        changeColorButton.tintColor = picker.selectedColor
-        self.navigationController?.navigationBar.tintColor = picker.selectedColor
-        self.tabBarController?.tabBar.tintColor = picker.selectedColor
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        picker.selectedColor =  UIColor.systemBlue
-        changeOption()
+        themeSwitch.isOn = SettingsViewController.blackTheme
+        fontSizeLabel.text = "\(Int(SettingsViewController.appFontSize))"
+        fontSizeSelector.value = Float(CGFloat(SettingsViewController.appFontSize))
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        changeOption()
+        languageSelect.selectedSegmentIndex = LanguageManager.shared.currentLanguage == .en ? 0 : 1
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -131,8 +139,10 @@ extension SettingsViewController : UIColorPickerViewControllerDelegate {
         UISlider.appearance().tintColor = viewController.selectedColor
         logoutButton.tintColor = viewController.selectedColor
         fontSlider.tintColor = viewController.selectedColor
+        changeColorButton.tintColor = viewController.selectedColor
        
+        self.navigationController?.navigationBar.tintColor = picker.selectedColor
+        self.tabBarController?.tabBar.tintColor = picker.selectedColor
         
-        changeOption()
     }
 }

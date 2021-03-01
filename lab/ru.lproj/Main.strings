@@ -1,0 +1,144 @@
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "0RY-69-pe1"; */
+"0RY-69-pe1.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "0RY-69-pe1"; */
+"0RY-69-pe1.placeholder" = "First name";
+
+/* Class = "UILabel"; text = "Welcome Back!"; ObjectID = "5wA-io-5Xc"; */
+"5wA-io-5Xc.text" = "Добро пожаловать!";
+
+/* Class = "UILabel"; text = "Add new group mate"; ObjectID = "9Rl-Gq-6dF"; */
+"9Rl-Gq-6dF.text" = "Add new group mate";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9fc-wG-wvd"; */
+"9fc-wG-wvd.text" = "Label";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "Bvg-lj-5Xm"; */
+"Bvg-lj-5Xm.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Bvg-lj-5Xm"; */
+"Bvg-lj-5Xm.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Latitude"; ObjectID = "CMs-it-V3G"; */
+"CMs-it-V3G.placeholder" = "Latitude";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "Gix-SJ-E9v"; */
+"Gix-SJ-E9v.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Second name"; ObjectID = "Gix-SJ-E9v"; */
+"Gix-SJ-E9v.placeholder" = "Second name";
+
+/* Class = "UILabel"; text = "Birthday"; ObjectID = "JUE-RZ-G1M"; */
+"JUE-RZ-G1M.text" = "Birthday";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "JUj-hQ-7EA"; */
+"JUj-hQ-7EA.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "JUj-hQ-7EA"; */
+"JUj-hQ-7EA.placeholder" = "Email";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "LMv-wc-jE6"; */
+"LMv-wc-jE6.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Second name"; ObjectID = "LMv-wc-jE6"; */
+"LMv-wc-jE6.placeholder" = "Second name";
+
+/* Class = "UIButton"; normalTitle = "Gallery"; ObjectID = "Ltx-Sz-Gg3"; */
+"Ltx-Sz-Gg3.normalTitle" = "Gallery";
+
+/* Class = "UITextField"; placeholder = "longitude"; ObjectID = "MDu-cO-zLi"; */
+"MDu-cO-zLi.placeholder" = "longitude";
+
+/* Class = "UINavigationItem"; title = "New group mate"; ObjectID = "Obp-bU-uL5"; */
+"Obp-bU-uL5.title" = "New group mate";
+
+/* Class = "UILabel"; text = "Font Size: 18"; ObjectID = "Q2I-cj-HWC"; */
+"Q2I-cj-HWC.text" = "Font Size: 18";
+
+/* Class = "UINavigationItem"; title = "Gallery"; ObjectID = "RDn-u8-gAi"; */
+"RDn-u8-gAi.title" = "Gallery";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "RJY-qq-kJM"; */
+"RJY-qq-kJM.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "RJY-qq-kJM"; */
+"RJY-qq-kJM.placeholder" = "Last Name";
+
+/* Class = "UIButton"; normalTitle = "Watch Video"; ObjectID = "SaX-hm-x7X"; */
+"SaX-hm-x7X.normalTitle" = "Watch Video";
+
+/* Class = "UIButton"; normalTitle = "Change Primary Color"; ObjectID = "UjG-Qw-5u8"; */
+"UjG-Qw-5u8.normalTitle" = "Change Primary Color";
+
+/* Class = "UILabel"; text = "Dark Mode"; ObjectID = "UsB-6d-sNd"; */
+"UsB-6d-sNd.text" = "Dark Mode";
+
+/* Class = "UIButton"; normalTitle = "I want to add new classmate"; ObjectID = "VLX-QX-nqZ"; */
+"VLX-QX-nqZ.normalTitle" = "I want to add new classmate";
+
+/* Class = "UITabBarItem"; title = "Group"; ObjectID = "VR6-Gc-0wB"; */
+"VR6-Gc-0wB.title" = "Group";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "VY2-3Z-O2H"; */
+"VY2-3Z-O2H.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "VY2-3Z-O2H"; */
+"VY2-3Z-O2H.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "WCG-AL-5Ww"; */
+"WCG-AL-5Ww.title" = "Login";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "XVC-Pe-04N"; */
+"XVC-Pe-04N.title" = "Add";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "YXz-63-wGt"; */
+"YXz-63-wGt.title" = "Map";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "ZGt-8q-i9t"; */
+"ZGt-8q-i9t.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "ZGt-8q-i9t"; */
+"ZGt-8q-i9t.placeholder" = "Last Name";
+
+/* Class = "UIButton"; normalTitle = "Complete"; ObjectID = "ZjA-96-1hm"; */
+"ZjA-96-1hm.normalTitle" = "Complete";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ZpY-bp-uKO"; */
+"ZpY-bp-uKO.normalTitle" = "Login";
+
+/* Class = "UINavigationItem"; title = "Map"; ObjectID = "cg8-e1-vH9"; */
+"cg8-e1-vH9.title" = "Map";
+
+/* Class = "UILabel"; text = "Birthday"; ObjectID = "dBW-XN-gow"; */
+"dBW-XN-gow.text" = "Birthday";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "ddU-g0-iwq"; */
+"ddU-g0-iwq.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "ddU-g0-iwq"; */
+"ddU-g0-iwq.placeholder" = "First name";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "gKY-sl-cke"; */
+"gKY-sl-cke.title" = "Settings";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "gXa-x6-XFV"; */
+"gXa-x6-XFV.title" = "Settings";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "iSq-OV-yem"; */
+"iSq-OV-yem.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Upload Video"; ObjectID = "id3-Oe-cWK"; */
+"id3-Oe-cWK.normalTitle" = "Upload Video";
+
+/* Class = "UINavigationItem"; title = "Details"; ObjectID = "v2m-eJ-fhL"; */
+"v2m-eJ-fhL.title" = "Details";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "vq5-86-xWJ"; */
+"vq5-86-xWJ.title" = "Item";
+
+/* Class = "UITextField"; accessibilityLabel = "asdas"; ObjectID = "wUU-Sm-afL"; */
+"wUU-Sm-afL.accessibilityLabel" = "asdas";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "wUU-Sm-afL"; */
+"wUU-Sm-afL.placeholder" = "Password";
