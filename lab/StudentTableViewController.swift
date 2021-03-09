@@ -140,7 +140,8 @@ class StudentTableViewController: UITableViewController {
             student = StudentTableViewController.students[indexPath.row]
           }
         
-        cell.nameLabel.text = student.firstName + " " + student.secondName + " " + student.lastName 
+        cell.nameLabel.text = student.firstName + " " + student.secondName + " " + student.lastName
+        cell.birthdayLabel.text = "Birthday: " + String(student.birthday.description[..<student.birthday.description.index(student.birthday.description.startIndex, offsetBy: 10)])
         if let url = URL(string: student.imageUrl) {
             print(url)
             cell.imageView?.load(url: url)

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -77,23 +76,33 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-wG-wvd" userLabel="Name">
-                                            <rect key="frame" x="110" y="5" width="284" height="21"/>
+                                            <rect key="frame" x="125" y="5" width="269" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BA-wd-DNR" userLabel="Birthday">
+                                            <rect key="frame" x="125" y="36" width="249" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9fc-wG-wvd" firstAttribute="leading" secondItem="jD3-Cn-fUh" secondAttribute="trailing" constant="20" id="2dW-Zy-SdG"/>
+                                        <constraint firstItem="9fc-wG-wvd" firstAttribute="leading" secondItem="jD3-Cn-fUh" secondAttribute="trailing" constant="35" id="2dW-Zy-SdG"/>
+                                        <constraint firstItem="8BA-wd-DNR" firstAttribute="top" secondItem="9fc-wG-wvd" secondAttribute="bottom" constant="10" id="C8z-iw-HTP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8BA-wd-DNR" secondAttribute="trailing" constant="20" id="MAy-MO-LXm"/>
                                         <constraint firstAttribute="trailing" secondItem="9fc-wG-wvd" secondAttribute="trailing" constant="20" id="Srr-t4-CsX"/>
                                         <constraint firstAttribute="bottom" secondItem="jD3-Cn-fUh" secondAttribute="bottom" id="dhC-b6-UoX"/>
                                         <constraint firstItem="jD3-Cn-fUh" firstAttribute="leading" secondItem="cje-uI-Nam" secondAttribute="leading" id="e7V-DK-CA1"/>
+                                        <constraint firstItem="8BA-wd-DNR" firstAttribute="leading" secondItem="jD3-Cn-fUh" secondAttribute="trailing" constant="35" id="fXT-a0-qsQ"/>
                                         <constraint firstItem="9fc-wG-wvd" firstAttribute="top" secondItem="cje-uI-Nam" secondAttribute="top" constant="5" id="gIH-2L-byH"/>
                                         <constraint firstItem="jD3-Cn-fUh" firstAttribute="centerY" secondItem="cje-uI-Nam" secondAttribute="centerY" id="pMi-cO-t0Y"/>
                                         <constraint firstItem="jD3-Cn-fUh" firstAttribute="leading" secondItem="cje-uI-Nam" secondAttribute="leading" id="xyN-tx-tFI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="birthdayLabel" destination="8BA-wd-DNR" id="X4z-Iu-pvn"/>
                                     <outlet property="nameLabel" destination="9fc-wG-wvd" id="Fcv-Sx-Aop"/>
                                     <outlet property="studentImage" destination="cje-uI-Nam" id="yqV-PA-qGy"/>
                                     <segue destination="ynA-P9-Y4z" kind="show" identifier="ShowDetail" id="a1H-yu-IjJ"/>
@@ -495,13 +504,11 @@
                                     <segue destination="aL7-a5-lG1" kind="show" id="6fK-F5-nYM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-bp-uKO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-bp-uKO">
                                 <rect key="frame" x="132" y="607" width="150" height="45"/>
-                                <color key="backgroundColor" red="0.88970988988876343" green="0.43139362335205078" blue="0.058949671685695648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ykQ-OK-UNQ"/>
                                 </constraints>
-                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Login"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -604,13 +611,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjA-96-1hm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjA-96-1hm">
                                 <rect key="frame" x="119" y="688" width="176" height="47"/>
-                                <color key="backgroundColor" red="0.88970988989999999" green="0.43139362339999998" blue="0.058949671689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="Gci-Io-bC1"/>
                                 </constraints>
-                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Complete"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -639,7 +644,6 @@
                                     <constraint firstAttribute="width" constant="100" id="Wk3-wo-Lat"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="0.88970988988876343" green="0.43139362335205078" blue="0.058949671685695648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
@@ -758,9 +762,6 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

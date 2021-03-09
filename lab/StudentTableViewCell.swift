@@ -11,6 +11,7 @@ class StudentTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var studentImage: UIView!
+    @IBOutlet weak var birthdayLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
