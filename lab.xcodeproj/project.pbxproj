@@ -21,6 +21,7 @@
 		093B25E325C9AC9B00F26CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093B25E125C9AC9B00F26CE2 /* LaunchScreen.storyboard */; };
 		0955A5DC25ED523800C846B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0955A5DA25ED523800C846B3 /* Localizable.strings */; };
 		0955A5F925ED675200C846B3 /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955A5F825ED675200C846B3 /* TapBarViewController.swift */; };
+		097E838C25F8B7C300FA2673 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097E838B25F8B7C300FA2673 /* Student.swift */; };
 		0992ECE525EC04590089A875 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECE425EC04590089A875 /* GalleryCollectionViewController.swift */; };
 		0992ECE825EC06130089A875 /* GalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECE725EC06130089A875 /* GalleryImageCollectionViewCell.swift */; };
 		0992ECEB25EC2E2E0089A875 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */; };
@@ -49,6 +50,7 @@
 		0955A5DB25ED523800C846B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0955A5DF25ED526400C846B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0955A5F825ED675200C846B3 /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
+		097E838B25F8B7C300FA2673 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		0992ECE425EC04590089A875 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		0992ECE725EC06130089A875 /* GalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				0992ECEA25EC2E2E0089A875 /* ImageDetailsViewController.swift */,
 				0955A5DA25ED523800C846B3 /* Localizable.strings */,
 				0955A5F825ED675200C846B3 /* TapBarViewController.swift */,
+				097E838B25F8B7C300FA2673 /* Student.swift */,
 			);
 			path = lab;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				093B25D725C9AC9B00F26CE2 /* AppDelegate.swift in Sources */,
 				093B25D925C9AC9B00F26CE2 /* SceneDelegate.swift in Sources */,
 				092A53E225E2DAEC00ECB136 /* StudentTableViewCell.swift in Sources */,
+				097E838C25F8B7C300FA2673 /* Student.swift in Sources */,
 				092A53E525E2DE8700ECB136 /* StudentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,32 +10,6 @@ import Firebase
 import FirebaseFirestore
 import os.log
 
-class Student {
-    var id : String
-    var firstName : String
-    var lastName : String
-    var secondName : String
-    var imageUrl : String
-    var birthday : Date
-    var videoUrl : String
-    var longitude: String
-    var latitude: String
-    var images: [String]
-    
-    init(id: String, firstName:String, lastName:String, secondName:String, imageUrl:String, birthday:Date, videoUrl: String, longitude: String, latitude: String, images: [String]) {
-        self.id = id
-        self.birthday = birthday
-        self.firstName = firstName
-        self.secondName = secondName
-        self.lastName = lastName
-        self.imageUrl = imageUrl
-        self.videoUrl = videoUrl
-        self.latitude = latitude
-        self.longitude = longitude
-        self.images = images
-    }
-}
-
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
@@ -62,8 +36,6 @@ class StudentTableViewController: UITableViewController {
     var isFiltering: Bool {
       return searchController.isActive && !isSearchBarEmpty
     }
-    
-    //MARK: Private Methods
     
     public func loadStudents() {
         StudentTableViewController.students = [Student]()
@@ -97,7 +69,7 @@ class StudentTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0);
+        tableView.contentInset = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0);
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
